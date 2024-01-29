@@ -24,7 +24,7 @@
 
             <div>
                 <label> Batch code: </label>
-                <input name="batch_code" value="{{$batch->batch_code}}">
+                <input name="batchCode" value="{{$batch->batch_code}}">
             </div>
 
             <div>

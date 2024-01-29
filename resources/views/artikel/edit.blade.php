@@ -18,7 +18,7 @@
                 <input name="id" value="{{$artikel->id}}" hidden>
             <div>
                 <label> artikel nummer: </label>
-                <input name="artikel_code" value="{{$artikel->artikel_code}}">
+                <input name="artikelCode" value="{{$artikel->artikel_code}}">
             </div>
 
             <button type="submit" class="btn btn-primary">Opslaan</button>

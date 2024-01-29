@@ -17,7 +17,7 @@
 
 
                 <label> Bij welk artikel hoort deze batch: </label>
-                <select name="artikel_id">
+                <select name="artikelId">
 
                     @foreach ($artikelen as $artikel)
                     <option value="{{$artikel->id}} "> {{$artikel->artikel_code}} </option>
@@ -31,7 +31,7 @@
 
             <div>
                 <label> Batch code: </label>
-                <input name="batch_code">
+                <input name="batchCode">
             </div>
 
             <div>

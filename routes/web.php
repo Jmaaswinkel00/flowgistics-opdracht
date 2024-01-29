@@ -5,6 +5,7 @@ use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\BatchController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PickorderController;
+use App\Models\Artikel;
 
 /*
 |--------------------------------------------------------------------------

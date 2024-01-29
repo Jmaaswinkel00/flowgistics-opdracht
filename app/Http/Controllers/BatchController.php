@@ -27,8 +27,8 @@ class BatchController extends BaseController
     {
         Batch::create(
             [
-                'artikel_id' => $request->artikel_id,
-                'batch_code' => $request->batch_code,
+                'artikel_id' => $request->artikelId,
+                'batch_code' => $request->batchCode,
                 'voorraad'   => $request->voorraad
             ]
         );
@@ -46,7 +46,7 @@ class BatchController extends BaseController
     public function update(BatchRequest $request)
     {
         $batch = Batch::where("id", "=", $request->id)->first();
-        $batch->batch_code = $request->batch_code;
+        $batch->batch_code = $request->batchCode;
         $batch->voorraad = $request->voorraad;
         $batch->save();
 

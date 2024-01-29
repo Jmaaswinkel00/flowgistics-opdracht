@@ -24,8 +24,8 @@ class BatchRequest extends FormRequest
     public function rules()
     {
         return [
-            
-            'batch_code' => 'required',
+
+            'batchCode' => 'required',
             'voorraad'   => 'required|numeric'
         ];
     }

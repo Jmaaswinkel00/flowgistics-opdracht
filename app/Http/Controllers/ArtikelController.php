@@ -33,7 +33,7 @@ class ArtikelController extends BaseController
     {
         $artikel = Artikel::create(
             [
-                'artikel_code' => $request->artikel_code
+                'artikel_code' => $request->artikelCode
             ]
         );
 
@@ -52,7 +52,7 @@ class ArtikelController extends BaseController
     public function update(ArtikelRequest $request)
     {
         $artikel = Artikel::where("id", "=", $request->id)->first();
-        $artikel->artikel_code = $request->artikel_code;
+        $artikel->artikel_code = $request->artikelCode;
         $artikel->save();
 
         return to_route('read_artikel', $artikel->id);

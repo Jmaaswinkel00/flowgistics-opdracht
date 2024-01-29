@@ -15,7 +15,7 @@
             @csrf <!-- {{ csrf_field() }} -->
             <div>
                 <label> Artikel nummer:  </label>
-                <input name="artikel_code">
+                <input name="artikelCode">
             </div>
 
             <button type="submit" class="btn btn-primary">Opslaan</button>

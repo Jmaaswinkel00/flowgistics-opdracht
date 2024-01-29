@@ -24,7 +24,7 @@ class ArtikelRequest extends FormRequest
     public function rules()
     {
         return [
-            'artikel_code' => 'required',
+            'artikelCode' => 'required',
         ];
     }
 }

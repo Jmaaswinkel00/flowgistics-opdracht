@@ -11,7 +11,7 @@
         @csrf <!-- {{ csrf_field() }} -->
     <div class="columns-3">
         <label> Pick order maken voor: </label>
-        <select name="artikel_id">
+        <select name="artikelId">
             @foreach ($artikelen as $artikel)
                 <option value="{{$artikel->id}} "> {{$artikel->artikel_code}} </option>
             @endforeach
