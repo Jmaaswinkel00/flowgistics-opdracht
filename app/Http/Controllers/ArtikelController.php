@@ -19,7 +19,7 @@ class ArtikelController extends BaseController
 
     public function read($id)
     {
-        $artikel = Artikel::find($id);
+        $artikel = Artikel::findOrFail($id);
 
         return view('artikel.read', ['artikel' => $artikel]);
     }
@@ -39,7 +39,7 @@ class ArtikelController extends BaseController
 
         $artikel->save();
 
-        return redirect('/artikel/read/' . $artikel->id);
+        return to_route('read_artikel', $artikel->id);
     }
 
     public function edit($artikel_id)
@@ -55,19 +55,19 @@ class ArtikelController extends BaseController
         $artikel->artikel_code = $request->artikel_code;
         $artikel->save();
 
-        return redirect('/artikel/read/' . $artikel->id);
+        return to_route('read_artikel', $artikel->id);
     }
 
     public function delete($id)
     {
-        $artikel = Artikel::find($id);
+        $artikel = Artikel::findOrFail($id);
 
         return view('artikel.delete', ['artikel' => $artikel]);
     }
 
     public function deleteConfirm($id)
     {
-        $artikel = Artikel::find($id);
+        $artikel = Artikel::findOrFail($id);
 
         foreach($artikel->batches as $batch)
         {
@@ -75,6 +75,6 @@ class ArtikelController extends BaseController
         }
         $artikel->delete();
 
-        return redirect('/');
+        return to_route('home');
     }
 }

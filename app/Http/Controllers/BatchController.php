@@ -33,7 +33,7 @@ class BatchController extends BaseController
             ]
         );
 
-        return redirect('/');
+        return to_route('home');
     }
 
     public function edit($batch_id)
@@ -50,7 +50,7 @@ class BatchController extends BaseController
         $batch->voorraad = $request->voorraad;
         $batch->save();
 
-        return redirect('/artikel/read/' . $batch->artikel->id);
+        return to_route('read_artikel', $batch->artikel->id);
     }
 
     public function delete($id)
@@ -59,6 +59,6 @@ class BatchController extends BaseController
         $artikelId = $batch->artikel->id;
         $batch->delete();
 
-        return redirect('/artikel/read/' . $artikelId);
+        return to_route('read_artikel', $artikelId);
     }
 }

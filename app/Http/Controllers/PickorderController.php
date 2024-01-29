@@ -23,7 +23,7 @@ class PickorderController extends BaseController
 
     public function selectBatch(Request $request)
     {
-        $artikel = Artikel::find($request->artikel_id);
+        $artikel = Artikel::findOrFail($request->artikel_id);
 
         $bestPick = Batch::where('artikel_id', '=', $artikel->id)
                             ->where('voorraad', '>', $request->amount)
@@ -41,7 +41,7 @@ class PickorderController extends BaseController
         {
             if($key !== "amount")
             {
-                $batch = Batch::find($key);
+                $batch = Batch::findOrFail($key);
 
                 if($batch->voorraad < $amountToPick)
                 {
@@ -63,8 +63,8 @@ class PickorderController extends BaseController
         }
 
         $pickorderID = $this->finalizePickorder($request);
-        
-        return redirect('/pickorder/downloadPDF/'. $pickorderID);
+
+        return to_route('pickorder_downloadPDF', $pickorderID);
     }
 
     private function finalizePickorder(Request $request)
@@ -74,7 +74,7 @@ class PickorderController extends BaseController
         {
             if($key !== "amount" && $amountToPick > 0)
             {
-                $batch = Batch::find($key);
+                $batch = Batch::findOrFail($key);
                 $batch->voorraad -= $amountToPick;
                 $batch->save();
 
@@ -94,7 +94,7 @@ class PickorderController extends BaseController
 
     public function downloadPDF($id)
     {
-        $pickorder = Pickorder::find($id);
+        $pickorder = Pickorder::findOrFail($id);
 
         $pdf = Pdf::loadView('pickorder.pdf', ['batchesUsed' => $pickorder->batches, 'totalAmount' => $pickorder->hoeveelheid]);
 
