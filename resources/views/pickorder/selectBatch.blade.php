@@ -49,7 +49,6 @@
             </table>
                 <button type="submit" class="btn btn-primary">Opslaan</button>
             </form>
-            {{-- <a href="/pickorder/calculate" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> Pickorder aanmaken </a> --}}
         </div>
     </div>
 </body>

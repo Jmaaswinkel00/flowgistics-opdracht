@@ -28,7 +28,7 @@
             </tbody>
 
         </table>
-        <a href="/artikel/delete_confirm/{{$artikel->id}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> verwijderen </a>
+        <a href="{{route('delete_confirm_artikel', $artikel->id)}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> verwijderen </a>
     </div>
 </body>
 </html>

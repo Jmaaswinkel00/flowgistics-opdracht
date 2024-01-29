@@ -8,8 +8,8 @@
 </head>
 <body>
     <div class="mb-10">
-        <a href="/artikel/create" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded "> Nieuw artikel maken </a>
-        <a href="/pickorder" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded "> pickorder </a>
+        <a href="{{route('create_artikel')}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded "> Nieuw artikel maken </a>
+        <a href="{{route('pickorder_home')}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded "> pickorder </a>
     </div>
 
 
@@ -19,9 +19,9 @@
 
                 <h3 class="mb-2"> {{$artikel->artikel_code}} </h3>
 
-                <a href="/artikel/read/{{$artikel->id}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounde"> show </a>
-                <a href="/artikel/edit/{{$artikel->id}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounde"> edit </a>
-                <a href="/artikel/delete/{{$artikel->id}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> delete </a>
+                <a href="{{route('read_artikel', $artikel->id)}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounde"> show </a>
+                <a href="{{route('edit_artikel', $artikel->id)}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounde"> edit </a>
+                <a href="{{route('delete_artikel', $artikel->id)}}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> delete </a>
             </div>
         @endforeach
     </div>
